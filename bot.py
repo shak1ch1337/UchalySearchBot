@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from handlers import commans_handler
+from handlers import commans_handler, messages_handler, questionare
 from config_reader import config
 
 
@@ -9,14 +9,16 @@ dp = Dispatcher()   #   Create Dispatcher
 
 
 #   Include routers
-dp.include_router(
-    commans_handler.router
+dp.include_routers(
+    commans_handler.router,
+    messages_handler.router,
+    questionare.router
 )
 
 
 async def main():
-    bot.delete_webhook(drop_pending_updates = True)
-    dp.start_polling(bot)
+    await bot.delete_webhook(drop_pending_updates = True)
+    await dp.start_polling(bot)
 
 
 if __name__ == "__main__":

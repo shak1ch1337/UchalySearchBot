@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters import Command
-from keyboards import reply_keyboard
+from keyboars import reply_keyboard
 
 
 #   Create router

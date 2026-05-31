@@ -4,7 +4,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 start_buttons = ReplyKeyboardMarkup(
     keyboard = [
         [
-            KeyboardButton("Отправить анкету на поиск")
+            KeyboardButton(text = "Отправить анкету на поиск")
         ]
     ],
     resize_keyboard = True,
